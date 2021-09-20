@@ -7,4 +7,10 @@ edition = "2018"
 
 [dependencies]
 yew = "0.18"
-matrix-sdk = { path = "../matrix-rust-sdk/crates/matrix-sdk" }
+wasm-bindgen-futures = "0.4.28"
+# matrix-sdk = { path = "../matrix-rust-sdk/crates/matrix-sdk" }
+
+[dependencies.matrix-sdk]
+path = "../matrix-rust-sdk/crates/matrix-sdk"
+default-features = false
+features = ["native-tls", "encryption"]
