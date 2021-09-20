@@ -7,6 +7,7 @@ use matrix_sdk::{
     Client, Result,
 };
 use std::convert::TryFrom;
+use yew::services::ConsoleService;
 
 pub async fn main() {
     let user = UserId::try_from("@vsaase_test:matrix.org").unwrap();
@@ -17,7 +18,7 @@ pub async fn main() {
 
     client
         .register_event_handler(|ev: SyncMessageEvent<MessageEventContent>| async move {
-            println!("Received a message {:?}", ev);
+            ConsoleService::info(format!("Received a message {:?}", ev).as_ref());
         })
         .await;
 
