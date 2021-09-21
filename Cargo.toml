@@ -13,5 +13,5 @@ yew = "0.18"
 [dependencies.matrix-sdk]
 default-features = false
 features = ["native-tls", "encryption"]
-path = "../matrix-rust-sdk/crates/matrix-sdk"
-# version = "*"
+# path = "../matrix-rust-sdk/crates/matrix-sdk"
+version = "*"
